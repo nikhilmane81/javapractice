@@ -1,68 +1,45 @@
 package com.nikhil.collection;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
-import java.util.Collections;
-import java.util.List;
-
-class Person
+class Student implements Comparable<Student>
 {
-    private String name;
-    private Integer age;
+    int rollno;
+    String name;
 
-    public Person(String name, Integer age) {
+    int age;
+
+    public Student(int rollno, String name, int age) {
+        this.rollno = rollno;
         this.name = name;
         this.age = age;
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public String toString() {
+        return this.rollno+" "+this.name+" "+this.age;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
+    @Override
+    public int compareTo(Student o) {
+        return Integer.compare(age, o.age);
     }
 }
-
-
 public class ComparableDemo
 {
 
-    public static int comparebyName(Person a, Person b)
-    {
-        return a.getName().compareTo(b.getName());
-    }
-
-    public static int comparebyAge(Person a, Person b)
-    {
-        return a.getAge().compareTo(b.getAge());
-    }
 
     public static void main(String[] args) {
-
-        List<Person> list = new ArrayList<>();
-        list.add(new Person("Nikhil", 27));
-        list.add(new Person("vicky", 24));
-        list.add(new Person("poonam", 25));
-        list.add(new Person("sachin", 19));
-
-        Collections.sort(list, ComparableDemo::comparebyName);
-        System.out.println("Comparing by name");
-        list.stream().map(Person::getName).forEach(System.out::println);
-
-        list.sort(ComparableDemo::comparebyAge);
-        System.out.println("Comparing by age");
-        list.stream().map(Person::getName).forEach(System.out::println);
+        Student s1 = new Student(1,"Nikhil", 27);
+        Student s2 = new Student(23,"Aish", 26);
+        Student s3 = new Student(12,"Nisur", 34);
+        Student s4 = new Student(45, "Rawam", 34);
 
 
-
+        Student[] arr = {s1,s2,s3,s4};
+        Arrays.sort(arr);
+        for (Student student : arr) {
+            System.out.println(student);
+        }
     }
 }
