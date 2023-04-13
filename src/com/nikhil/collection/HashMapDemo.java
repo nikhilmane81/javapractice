@@ -11,8 +11,9 @@ public class HashMapDemo
         HashMap<Integer,String> map = new HashMap<>();
 
         map.put(1,"First");
-        map.put(4,"Second");
+        map.put(2,"Second");
         map.put(3,"Third");
+        map.put(4,"Forth");
        // map.put(null,"Minti");
 
         System.out.println(map);

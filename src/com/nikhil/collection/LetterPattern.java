@@ -5,7 +5,6 @@ import java.util.List;
 //Wrong answer
 public class LetterPattern
 {
-
     //str = abcef   str1 = efgab
     public static boolean letterpattern(String str1, String str2)
     {
@@ -36,12 +35,8 @@ public class LetterPattern
         System.out.println(list1);
         return list.equals(list1);
     }
-
-
-
-
     public static void main(String[] args) {
-
-        System.out.println(letterpattern("ABAB", "XYXY"));
+        String[] testcase1 = {"DCBX", "ZYXW"};
+        System.out.println(letterpattern(testcase1[0],testcase1[1]));
     }
 }

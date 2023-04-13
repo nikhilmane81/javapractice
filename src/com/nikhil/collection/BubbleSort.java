@@ -1,6 +1,5 @@
 package com.nikhil.collection;
 
-
 import java.util.Arrays;
 
 public class BubbleSort
@@ -20,7 +19,6 @@ public class BubbleSort
             }
         }
     }
-
     public static void selectionsort(int [] arr)
     {
 

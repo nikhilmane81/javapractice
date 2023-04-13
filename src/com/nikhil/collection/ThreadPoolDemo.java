@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 
 class Task implements Runnable {
 
-    private String name;
+    private final String name;
     Task(String s)
     {
         this.name = s;
