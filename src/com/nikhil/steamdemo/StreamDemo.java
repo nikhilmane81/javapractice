@@ -129,6 +129,7 @@ public class StreamDemo
 
         System.out.println(Projects);
 
+        //ShortCircuit or skipping or setting limit
         List<Employee> shortcircuit = employees
                 .stream()
                 .skip(2)
@@ -137,6 +138,7 @@ public class StreamDemo
 
         System.out.println(shortcircuit);
 
+        //Sorting using comparable interface
         List<Employee> sortedbynamelist = employees
                 .stream()
                 /*.sorted(((o1, o2) -> o1.getName().compareTo(o2.getName())))   Internal implementation*/
@@ -146,25 +148,33 @@ public class StreamDemo
         System.out.println(sortedbynamelist);
 
 
-        //sorting
+        //sorting by salary
         List<Employee> sortedbysalary = employees.stream()
                 .sorted(((o1, o2) -> o2.getSalary().compareTo(o1.getSalary())))    //Reverse order
                 .toList();
        System.out.println(sortedbysalary);
 
-
+        //Aggregation finction like max or min or avg
         Employee maxemp = employees.stream()
                 .max(Comparator.comparing(Employee::getSalary))
                 .orElseThrow(()->new RuntimeException("Not found"));
 
         System.out.println(maxemp);
 
+        double avgsalary = employees.stream()
+                .mapToDouble(Employee::getSalary)
+                .average()
+                .orElse(0.0);
 
+        System.out.println("Average salary is "+ avgsalary);
+
+
+        //Reduce
         Double totalsalary = employees.stream()
                 .map(Employee::getSalary)
                 .reduce(0.0, Double::sum);
 
-        System.out.println(totalsalary);
+        System.out.println("Total salary is "+totalsalary);
 
 
 
