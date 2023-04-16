@@ -80,7 +80,7 @@ public class StreamDemo
 
     public static void main(String[] args) {
         //Basic operation, using foreach on stream
-        //employees.stream().forEach(System.out::println);
+        employees.stream().forEach(System.out::println);
 
         //map and tolist
         List<Employee> incrementedsal = employees.stream()
@@ -91,7 +91,7 @@ public class StreamDemo
                         employee.getSalary()*1.20
                 )).toList();
 
-        //System.out.println(incrementedsal);
+        System.out.println(incrementedsal);
 
         //filter
 
@@ -104,7 +104,7 @@ public class StreamDemo
                         employee.getSalary()*1.50
                 )).toList();
 
-        //System.out.println(increwithfilter);
+        System.out.println(increwithfilter);
 
         //filter and gerfirst
 
@@ -118,7 +118,7 @@ public class StreamDemo
                 )).findFirst()
                 .orElseThrow(()-> new RuntimeException("Emp not found"));
 
-        //System.out.println(emp);
+        System.out.println(emp);
 
 
         //flatmap
@@ -127,7 +127,7 @@ public class StreamDemo
                 .flatMap(Collection::stream)
                 .collect(Collectors.joining(","));
 
-        //System.out.println(Projects);
+        System.out.println(Projects);
 
         List<Employee> shortcircuit = employees
                 .stream()
@@ -135,7 +135,7 @@ public class StreamDemo
                 .limit(1)
                 .toList();
 
-        //System.out.println(shortcircuit);
+        System.out.println(shortcircuit);
 
         List<Employee> sortedbynamelist = employees
                 .stream()
@@ -143,14 +143,14 @@ public class StreamDemo
                 .sorted((Comparator.comparing(Employee::getName)))
                 .toList();
 
-        //System.out.println(sortedbynamelist);
+        System.out.println(sortedbynamelist);
 
 
         //sorting
         List<Employee> sortedbysalary = employees.stream()
                 .sorted(((o1, o2) -> o2.getSalary().compareTo(o1.getSalary())))    //Reverse order
                 .toList();
-       // System.out.println(sortedbysalary);
+       System.out.println(sortedbysalary);
 
 
         Employee maxemp = employees.stream()
