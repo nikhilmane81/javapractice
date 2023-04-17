@@ -176,12 +176,6 @@ public class StreamDemo
 
         System.out.println("Total salary is "+totalsalary);
 
-
-
-
-
-
-
     }
 
 }
