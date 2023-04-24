@@ -13,7 +13,7 @@ public class HashMapDemo
         map.put(1,"First");
         map.put(2,"Second");
         map.put(3,"Third");
-        map.put(4,"Forth");
+        map.put(4,"Forth"); 
        // map.put(null,"Minti");
 
         System.out.println(map);
