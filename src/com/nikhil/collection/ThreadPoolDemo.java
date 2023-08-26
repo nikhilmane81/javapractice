@@ -60,7 +60,6 @@ public class ThreadPoolDemo {
         pool.execute(r5);
 
         pool.shutdown();
-
     }
 
 }
